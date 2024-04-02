@@ -1,0 +1,115 @@
+<View style={styles.container}>
+                <ScrollView >
+                    <Image
+                        source={{ uri: this.state.link }}
+                        style={{ width: 200, height: 200, alignSelf: 'center' }}
+                        containerStyle={{ marginLeft: 'auto', marginRight: 'auto' }}
+                    />
+                    <Input 
+                        leftIcon={
+                            <Icon 
+                                name='user-o'
+                                size={20}
+                                color='#0085E6'
+                            />
+                        }
+                        placeholder={'  ชื่อเพลง'}
+                        value={this.state.name_song}
+                        onChangeText={(val) => this.inputValueUpdate(val, 'name_song')}
+                    />
+                    <Input 
+                        leftIcon={
+                            <Icon 
+                                name='envelope-o'
+                                size={20}
+                                color='#0085E6'
+                            />
+                        }
+                        placeholder={'  ชื่อผู้แต่ง'}
+                        value={this.state.artist}
+                        onChangeText={(val) => this.inputValueUpdate(val, 'artist')}
+                    />
+                    <CheckBox
+                    title='วงดนตรี'
+                    checked={this.state.checked1}
+                    onPress={() => this.setState({ checked1: !this.state.checked1 })}
+                    checkedColor='#0085E6'
+                    />
+                    <CheckBox
+                    title='rock'
+                    checked={this.state.checked2}
+                    onPress={() => this.setState({ checked2: !this.state.checked2 })}
+                    checkedColor='#0085E6'
+                    />
+                    <CheckBox
+                    title='สติง'
+                    checked={this.state.checked3}
+                    onPress={() => this.setState({ checked3: !this.state.checked3 })}
+                    checkedColor='#0085E6'
+                    />
+                    <Input 
+                        leftIcon={
+                            <Icon 
+                                name='envelope-o'
+                                size={20}
+                                color='#0085E6'
+                            />
+                        }
+                        placeholder={'  ปีที่เผยแพร่'}
+                        value={this.state.Year_published}
+                        onChangeText={(val) => this.inputValueUpdate(val, 'Year_published')}
+                    />
+                    <Input 
+                        leftIcon={
+                            <Icon 
+                                name='envelope-o'
+                                size={20}
+                                color='#0085E6'
+                            />
+                        }
+                        placeholder={'  รายละเอียด'}
+                        value={this.state.detail}
+                        onChangeText={(val) => this.inputValueUpdate(val, 'detail')}
+                    />
+                    <Input 
+                        leftIcon={
+                            <Icon 
+                                name='mobile'
+                                size={30}
+                                color='#0085E6'
+                            />
+                        }
+                        placeholder={'  Link รูปภาพ'}
+                        value={this.state.link}
+                        onChangeText={(val) => this.inputValueUpdate(val, 'link')}
+                    />
+                    <Button 
+                        icon={
+                            <Icon 
+                                name='check'
+                                size={15}
+                                color='white'
+                            />
+                        }
+                        title='  เพิ่มเพลง'
+                        buttonStyle={{
+                            backgroundColor: "green"
+                        }}
+                        onPress={() => this.storeUser()}
+                    />
+                    <Button 
+                        icon={
+                            <Icon 
+                                name='users'
+                                size={15}
+                                color='white'
+                            />
+                        }
+                        title='  เพลงทั้งหมด'
+                        onPress={() => this.props.navigation.navigate('UserScreen')}
+                        containerStyle={{
+                            marginTop: 10
+                        }}
+                    />
+                </ScrollView>
+            </View>
